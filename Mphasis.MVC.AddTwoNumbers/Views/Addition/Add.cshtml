@@ -1,0 +1,39 @@
+﻿@model Mphasis.MVC.AddTwoNumbers.Models.AdditionModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Addition</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm("Add", "Addition", FormMethod.Post))
+        {
+            
+            @Html.Label("Number 1    ")
+            @Html.EditorFor(p=>p.Number1)
+            @Html.ValidationMessageFor(p => p.Number1)
+            <br />
+            <br />
+            @Html.Label("Number 2    ")
+            @Html.EditorFor(p=>p.Number2)
+            @Html.ValidationMessageFor(p => p.Number2)
+            <br />
+            <br />
+            @Html.Label("Result = ")
+            @Html.DisplayFor(p=>p.Result)
+            <br />
+            <br />
+            <input type="submit" value="Add"/>
+        }
+
+       
+    </div>
+</body>
+</html>
